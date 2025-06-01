@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lumina Cuber Club — Компьютерный клуб</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url('фон.jpg'); /* Путь к изображению */
+    background-size: cover;                      /* Масштабируем картинку на весь экран */
+    background-position: center;                 /* Центрируем изображение */
+    background-repeat: no-repeat;                /* Запрещаем повторение фона */
+    color: white;
+    margin: 0;
+    padding: 0;
+            }
+        
+        header {
+            background-image: linear-gradient(to right, #2c1a3bfb, #002166); /* Фиолетовый градиент */
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        section {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        /* Оформление всех панелей */
+        .panel {
+            background-image: linear-gradient(to right, #2c1a3bfb, #002166); /* Градиент в каждой панели */
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            margin-bottom: 20px;
+        }
+        .tariff-header {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+        /* Расположение тарифов рядом */
+        .tariffs-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        @media screen and (max-width: 768px) { /* Адаптация для маленьких экранов */
+            .tariffs-container {
+                flex-direction: column;
+            }
+        }
+        footer {
+            background-image: linear-gradient(to right, #2c1a3bfb, #002166); /* Фон футера */
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Шапка -->
+<header>
+    <h1>Lumina Cuber Club</h1>
+    <nav>
+        <ul>
+            <li><a href="#prices">Цены</a></li>
+            <li><a href="#configuration">Конфигурация ПК</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Цены -->
+<section id="prices">
+    <!-- Таранги размещены бок о бок -->
+    <div class="tariffs-container">
+        <!-- Панель обычного тарифа -->
+        <div class="panel">
+            <div class="tariff-header">Обычный тариф</div>
+            <table>
+                <tr>
+                    <td>1 час</td>
+                    <td>70 руб.</td>
+                </tr>
+                <tr>
+                    <td>3 часа</td>
+                    <td>200 руб.</td>
+                </tr>
+                <tr>
+                    <td>5 часов</td>
+                    <td>300 руб.</td>
+                </tr>
+                <tr>
+                    <td>Ночной пакет (22:00–8:00)</td>
+                    <td>400 руб.</td>
+                </tr>
+            </table>
+        </div>
+    
+        <!-- Панель VIP тарифа -->
+        <div class="panel">
+            <div class="tariff-header">VIP-тариф</div>
+            <table>
+                <tr>
+                    <td>1 час</td>
+                    <td>110 руб.</td>
+                </tr>
+                <tr>
+                    <td>3 часа</td>
+                    <td>300 руб.</td>
+                </tr>
+                <tr>
+                    <td>5 часов</td>
+                    <td>450 руб.</td>
+                </tr>
+                <tr>
+                    <td>Ночной пакет (22:00–8:00)</td>
+                    <td>600 руб.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Конфигурация компьютеров -->
+<section class="panel" id="configuration">
+    <div class="tariff-header">Конфигурация ПК</div>
+    <table>
+        <tr>
+            <th>Компонент</th>
+            <th>Модель/Параметры</th>
+        </tr>
+        <tr>
+            <td>Процессор</td>
+            <td>Intel Core i7-12700K / AMD Ryzen 7 5800X</td>
+        </tr>
+        <tr>
+            <td>Видеокарта</td>
+            <td>NVIDIA GeForce RTX 3070 Ti / AMD Radeon RX 6700 XT</td>
+        </tr>
+        <tr>
+            <td>Оперативная память</td>
+            <td>32GB DDR4 RAM (частота 3200 МГц)</td>
+        </tr>
+        <tr>
+            <td>Накопитель SSD</td>
+            <td>NVMe M.2 1TB</td>
+        </tr>
+        <tr>
+            <td>Монитор</td>
+            <td>27 дюймов, Full HD, 144 Гц</td>
+        </tr>
+        <tr>
+            <td>Клавиатура и мышь</td>
+            <td>Механическая клавиатура, оптическая игровая мышь</td>
+        </tr>
+        <tr>
+            <td>Гарнитура</td>
+            <td>Профессиональная геймерская гарнитура с шумоподавлением</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Подвал -->
+<footer id="contacts">
+    <h2>Контакты</h2>
+    <address>
+        Адрес: г. Ростов-на-Дону, ул. Стартовая д. 2. <br>
+        Телефон: +7 (901) 446-18-41 <br>
+    </address>
+</footer>
+
+</body>
+</html>
