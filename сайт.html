@@ -4,23 +4,38 @@
     <meta charset="UTF-8">
     <title>Lumina Cuber Club — Компьютерный клуб</title>
     <style>
+        body.light-theme {
+            background-image: url('111.jpg'); 
+            background-size: cover;                      /* Масштабируем картинку на весь экран */
+            background-position: center;                 /* Центрируем изображение */
+            background-repeat: no-repeat;                /* Запрещаем повторение фона */  
+            --fg-color: rgb(10, 49, 121);
+            --gradient-start: #abf2fc;
+            --gradient-end: #dcdcdc;
+        }
+
         body {
-    font-family: Arial, sans-serif;
-    background-image: url('фон.jpg'); /* Путь к изображению */
-    background-size: cover;                      /* Масштабируем картинку на весь экран */
-    background-position: center;                 /* Центрируем изображение */
-    background-repeat: no-repeat;                /* Запрещаем повторение фона */
-    color: white;
-    margin: 0;
-    padding: 0;
-            }
-        
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--fg-color);
+            margin: 0;
+            padding: 0;
+            background-image: url('фон.jpg'); 
+            background-size: cover;                      /* Масштабируем картинку на весь экран */
+            background-position: center;                 /* Центрируем изображение */
+            background-repeat: no-repeat;                /* Запрещаем повторение фона */
+            --fg-color: white;
+            --gradient-start: #2c1a3bfb;
+            --gradient-end: #002166;
+        }
+
         header {
-            background-image: linear-gradient(to right, #2c1a3bfb, #002166); /* Фиолетовый градиент */
-            color: white;
+            background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            color: var(--fg-color);
             text-align: center;
             padding: 1em 0;
         }
+
         nav ul {
             list-style-type: none;
             display: flex;
@@ -28,65 +43,77 @@
             gap: 1rem;
             padding: 0;
         }
+
         nav a {
-            color: white;
+            color: var(--fg-color);
             text-decoration: none;
             transition: all .3s ease-in-out;
         }
+
         nav a:hover {
-            color: #ffd700;
+            color: #3393c0;
         }
+
         section {
             max-width: 800px;
             margin: auto;
-            padding: 20px;
+            padding: 5px;
         }
-        /* Оформление всех панелей */
+
         .panel {
-            background-image: linear-gradient(to right, #2c1a3bfb, #002166); /* Градиент в каждой панели */
-            color: white;
+            background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            color: var(--fg-color);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,.1);
             margin-bottom: 20px;
         }
+
         .tariff-header {
             font-size: 1.5em;
             margin-bottom: 10px;
-            color: white;
+            color: var(--fg-color);
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
+
         th, td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid rgba(255,255,255,0.3);
         }
-        /* Расположение тарифов рядом */
+
         .tariffs-container {
             display: flex;
             justify-content: space-between;
         }
-        @media screen and (max-width: 768px) { /* Адаптация для маленьких экранов */
+
+        @media screen and (max-width: 768px) {
             .tariffs-container {
                 flex-direction: column;
             }
         }
+
         footer {
-            background-image: linear-gradient(to right, #2c1a3bfb, #002166); /* Фон футера */
-            color: white;
+            background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            color: var(--fg-color);
             text-align: center;
-            padding: 1em 0;
-            position: fixed;
+            padding: 1em 15;
+            position: absolute;
             bottom: 0;
             width: 100%;
         }
     </style>
 </head>
 <body>
+
+<div style="position: absolute; top: 10px; right: 10px; z-index: 1000;" onclick="toggleTheme()">
+    ☀️🌙
+</div>
 
 <!-- Шапка -->
 <header>
@@ -100,11 +127,10 @@
     </nav>
 </header>
 
+
 <!-- Цены -->
 <section id="prices">
-    <!-- Таранги размещены бок о бок -->
     <div class="tariffs-container">
-        <!-- Панель обычного тарифа -->
         <div class="panel">
             <div class="tariff-header">Обычный тариф</div>
             <table>
@@ -126,8 +152,6 @@
                 </tr>
             </table>
         </div>
-    
-        <!-- Панель VIP тарифа -->
         <div class="panel">
             <div class="tariff-header">VIP-тариф</div>
             <table>
@@ -195,10 +219,16 @@
 <footer id="contacts">
     <h2>Контакты</h2>
     <address>
-        Адрес: г. Ростов-на-Дону, ул. Стартовая д. 2. <br>
-        Телефон: +7 (901) 446-18-41 <br>
+        Адрес: г. Ростов-на-Дону, ул. Стартовая д. 2.<br>
+        Телефон: +7 (901) 446-18-41<br>
     </address>
 </footer>
+
+<script>
+    function toggleTheme() {
+        document.body.classList.toggle("light-theme");
+    }
+</script>
 
 </body>
 </html>
